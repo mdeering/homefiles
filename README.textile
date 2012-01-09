@@ -1,4 +1,4 @@
-h1. Instalation
+h1. Installation
 
 p. From within the cloned _vim_ directory run the following to setup this vim confirguration for the current user.
 
