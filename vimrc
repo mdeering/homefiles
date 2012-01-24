@@ -80,4 +80,13 @@ map <Leader>t :FuzzyFinderTextMate<Enter>
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
+" Open NERDTree
+map <leader>n :NERDTreeToggle<cr>
+
+" For NERDTree to be able to show hidden files.
+let NERDTreeShowHidden=1
+
+" Close NERDTree after a file has been opened.
+let NERDTreeQuitOnOpen=1
+
 
