@@ -65,6 +65,7 @@ map <leader>tm :tabmove
 
 " Uncomment to use Jamis Buck's file opening plugin
 map <Leader>t :FuzzyFinderTextMate<Enter>
+map <Leader>tr :ruby finder.rescan!<Enter>
 
 " Controversial...swap colon and semicolon for easier commands
 "nnoremap ; :
