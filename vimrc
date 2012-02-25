@@ -90,4 +90,5 @@ let NERDTreeShowHidden=1
 " Close NERDTree after a file has been opened.
 let NERDTreeQuitOnOpen=1
 
-
+" We don't need no stinking whitespace
+autocmd FileType css,cucumber,haml,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
