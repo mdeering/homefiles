@@ -91,4 +91,4 @@ let NERDTreeShowHidden=1
 let NERDTreeQuitOnOpen=1
 
 " We don't need no stinking whitespace
-autocmd FileType css,cucumber,haml,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType coffee,css,cucumber,haml,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e

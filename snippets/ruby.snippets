@@ -502,3 +502,97 @@ snippet tas
 	task :${2:task_name => [:dependent, :tasks]} do
 		${3}
 	end
+# Start My Personalizations
+
+# Active Record/Model
+snippet bt
+	belongs_to :${1:association}
+snippet btc
+	belongs_to :${1:association}, :class_name => '${2:ClassName}'
+snippet bti
+	belongs_to :${1:association}, :inverse_of => :${2:has_many_assocation_name}
+snippet hm
+	has_many :${1:association}
+snippet hmc
+	has_many :${1:association}, :class_name => '${2:ClassName}'
+snippet hmi
+	has_many :${1:association}, :inverse_of => :${2:belongs_to_association_name}
+snippet ho
+	has_one :${1:association}
+snippet hoc
+	has_one :${1:association}, :conditions => { :${2:key} => ${3:value} }
+snippet val
+	validates ${1:attribute}
+snippet valp
+	validates ${1:attribute},
+		:presence => true
+
+# Database Migrations
+snippet addi
+	add_index :${1:table_name}, [ :${2:columns} ]
+snippet addiu
+	add_index :${1:table_name}, [ :${2:columns} ], :unique => true
+snippet addc
+	add_column :${1:table_name}, :${2:column_name}, :${3:column_type}, :default => ${4:nil}, :null => ${5:false}
+snippet addcs
+	add_column :${1:table_name}, :${2:column_name}, :string, :default => ${3:nil}, :limit => ${4:32}, :null => ${5:false}
+
+# RSpec Active Record/Model
+snippet itsav
+	it { should allow_value(${1:value}).for(:${2:attribute}) }
+snippet itsbt
+	it { should belong_to :${1:association} }
+snippet itsel
+	it { should ensure_length_of(${1:attribute}).is_at_most(${2:32}) }
+snippet itsho
+	it { should have_one :${1:association} }
+snippet itshm
+	it { should have_many :${1:association} }
+snippet itshmt
+	it { should have_many(:${1:association}).through(:${2:through_association}) }
+snippet itshdi
+	it { should have_db_index([ :${1:columns} ]) }
+snippet itshdiu
+	it { should have_db_index([ :${1:columns} ]).unique(${2:true}) }
+snippet itshtc
+	it { should have_timestamp_columns }
+snippet itshvf
+	it { should have_a_valid_factory }
+snippet itshvfn
+	it { should have_a_valid_factory :${1:factory_name} }
+snippet itsma
+	it { should allow_mass_assignment_of :${1:attribute} }
+snippet itspa
+	it { should protect_all_attributes_from_mass_assignment }
+snippet itspaa
+	it { should protect_all_attributes_from_mass_assignment.as(:${1:role}) }
+snippet itspaae
+	it { should protect_all_attributes_from_mass_assignment.as(:${1:role})except(:${2:attributes}) }
+snippet itsna
+	it { should normalize_attribute :${1:attribute} }
+snippet itsnaft
+	it { should normalize_attribute(:${1:attribute}).from(${2}).to(${3}) }
+snippet itstou
+  it { should touch_on_update :${1:association} }
+snippet itsvp
+	it { should validate_presence_of :${1:attribute} }
+snippet itsvu
+	it { should validate_uniqueness_of :${$1:attribute} }
+snippet itsvuc
+	it { should validate_uniqueness_of :${$1:attribute}.case_insensitive(${2:true}) }
+snippet itsvus
+	it { should validate_uniqueness_of(:${$1:attribute}).scope(:${2:columns}) }
+snippet itsvusc
+	it { should validate_uniqueness_of(:${$1:attribute}).scope(:${2:columns}).case_insensitive(${3:true}) }
+
+# Factory Helpers
+snippet fact
+	FactoryGirl.create(:${1:factory_name})
+snippet factwa
+	FactoryGirl.create(:${1:factory_name}, :${2:key} => ${3:value})
+snippet factb
+	FactoryGirl.build(:${1:factory_name})
+snippet factbwa
+	FactoryGirl.build(:${1:factory_name}, :${2:key} => ${3:value})
+
+
