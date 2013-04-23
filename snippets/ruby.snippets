@@ -1,0 +1,89 @@
+###############################################################################
+# Ruby
+###############################################################################
+
+snippet class
+	class ${1:ClassName}
+		${2}
+	end
+
+snippet class::
+	class ${1:Parent}::${2:Child}
+		${3}
+	end
+
+snippet def
+	def ${1:function_name}
+		${2}
+	end
+
+snippet defa
+	def ${1:function_name}(${2:args})
+		${3}
+	end
+snippet defs
+	def self.${1:function_name}
+		${2}
+	end
+snippet defsa
+	def self.${1:function_name}(${2:args})
+		${3}
+	end
+snippet mod
+	module ${1:PowerfulModuleName}
+		${2}
+	end
+
+snippet mod::
+	module ${1:Parent}::${2:Child}
+		${3}
+	end
+
+snippet pri
+	private
+	
+		${1:def}${2}
+snippet prot
+	protected
+	
+		${1:def}${2}
+
+###############################################################################
+# RSpec
+###############################################################################
+
+snippet cont
+	context '${1:describe what is going on}' do
+		${2}
+	end
+
+snippet desc
+	describe '${1:something that needs testing}' do
+		${2}
+	end
+
+snippet desk
+	describe ${1:ClassName} do
+		${2}
+	end
+
+snippet it
+	it '${1:should do something really cool}' do
+		${2}
+	end
+snippet its
+	it { should ${1:do_some_really_cool_things} }
+	${2}
+snippet itsav
+	it { should allow_value(${1:value}).for(:${2:attribute}) }
+	${3}
+snippet itsn
+	it { should_not ${1:do_some_really_cool_things} }
+	${2}
+snippet itsna
+	it { should normalize_attribute :${1:attribute} }
+	${2}
+snippet itsnav
+	it { should_not allow_value(${1:value}).for(:${2:attribute}) }
+	${3}
+
