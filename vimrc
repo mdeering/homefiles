@@ -1,94 +1,29 @@
-" Example Vim configuration.
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
+" ===========================================
+" Who: Michael Deering (@mdeering)
+" ===========================================
 
-set nocompatible                  " Must come first because it changes other options.
+set nocompatible " Must come first because it changes other options.
 
-silent! call pathogen#runtime_append_all_bundles()
+" All of the plugins are installed with Vundle from this file.
+source ~/.vim/vundle.vim
 
-syntax enable                     " Turn on syntax highlighting.
-filetype plugin indent on         " Turn on file type detection.
+" Automatically detect file types. (must turn on after Vundle)
+filetype plugin indent on
 
-runtime macros/matchit.vim        " Load the matchit plugin.
+" Platform (Windows, Mac, etc.) configuration.
+"source ~/.vim/platforms.vim
 
-set showcmd                       " Display incomplete commands.
-set showmode                      " Display the mode you're in.
+" All of the Vim configuration.
+source ~/.vim/config.vim
 
-set backspace=indent,eol,start    " Intuitive backspacing.
+" All hotkeys, not depedant on plugins, are bound here.
+"source ~/.vim/bindings.vim
 
-set hidden                        " Handle multiple buffers better.
+" Plugin-specific configuration.
+source ~/.vim/plugin_config.vim
 
-set wildmenu                      " Enhanced command line completion.
-set wildmode=list:longest         " Complete files like a shell.
+" Small custom functions.
+source ~/.vim/functions.vim
 
-set ignorecase                    " Case-insensitive searching.
-set smartcase                     " But case-sensitive if expression contains a capital letter.
-
-set number                        " Show line numbers.
-set ruler                         " Show cursor position.
-
-set incsearch                     " Highlight matches as you type.
-set hlsearch                      " Highlight matches.
-
-set nowrap                        " Turn off line wrapping.
-set scrolloff=3                   " Show 3 lines of context around the cursor.
-
-set title                         " Set the terminal's title
-
-set visualbell                    " No beeping.
-
-set nobackup                      " Don't make a backup before overwriting a file.
-set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
-
-" UNCOMMENT TO USE
-set tabstop=2                    " Global tab width.
-set shiftwidth=2                 " And again, related.
-set expandtab                    " Use spaces instead of tabs
-
-set laststatus=2                  " Show the status line all the time
-" Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
-" Or use vividchalk
-colorscheme vividchalk 
-
-" Tab mappings.
-map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-
-" Uncomment to use Jamis Buck's file opening plugin
-map <Leader>t :FuzzyFinderTextMate<Enter>
-map <Leader>tr :ruby finder.rescan!<Enter>
-
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-" Open NERDTree
-map <leader>n :NERDTreeToggle<cr>
-
-" For NERDTree to be able to show hidden files.
-let NERDTreeShowHidden=1
-
-" Close NERDTree after a file has been opened.
-let NERDTreeQuitOnOpen=1
-
-" We don't need no stinking whitespace
-autocmd FileType coffee,css,cucumber,haml,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+" Auto commands.
+"source ~/.vim/autocmds.vim

@@ -1,1 +1,4 @@
+" Don't include bundles, just redownload via :BundleInstall
+bundle
+
 .netrwhist

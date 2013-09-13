@@ -5,5 +5,17 @@ p. From within the cloned _vim_ directory run the following to setup this vim co
 <pre>
 ln -s $PWD $HOME/.vim
 ln -s $PWD/vimrc $HOME/.vimrc
-ln -s $PWD/gvimrc $HOME/.gvimrc
+git clone https://github.com/gmarik/vundle.git $HOME/.vim/bundle/vundle
+vim +BundleInstall +qall
 </pre>
+
+tailminsf.vim - Tail log files.
+ctags
+NERDTree close file on selection.
+Surround plugin.
+
+
+NerdTree 
+* Two versions of NerdTree open when you open a whole directory to start with.
+* It does not open a new window when you select a file.
+* It closes itself after you select the file you are after.
