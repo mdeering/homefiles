@@ -8,6 +8,11 @@ set autoread                      " Automatically reload changes if detected
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
+
+
+nmap <leader>p :call PasteToggle()<CR>
+nmap <leader>r :call NumberToggle()<CR>
+nmap <leader>s :set spell!<CR>
 nmap <leader>v :edit $MYVIMRC<CR>
 
 set backspace=indent,eol,start    " Intuitive backspacing.

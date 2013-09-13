@@ -22,6 +22,9 @@ Bundle 'gmarik/vundle'
 " Plugin Bundles
 " ---------------
 
+" CoffeeScript support for vim
+Bundle 'kchmck/vim-coffee-script'
+
 " one colorscheme pack to rule them all!
 Bundle 'flazz/vim-colorschemes'
 
@@ -55,6 +58,9 @@ Bundle 'garbas/vim-snipmate'
 
 " quoting/parenthesizing made simple
 Bundle 'tpope/vim-surround'
+
+" Vim script for text filtering and alignment
+Bundle 'godlygeek/tabular'
 
 " An extensible & universal comment plugin that also handles embedded filetypes
 Bundle 'tComment'

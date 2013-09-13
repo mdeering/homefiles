@@ -23,7 +23,7 @@ source ~/.vim/config.vim
 source ~/.vim/plugin_config.vim
 
 " Small custom functions.
-"source ~/.vim/functions.vim
+source ~/.vim/functions.vim
 
 " Auto commands.
 "source ~/.vim/autocmds.vim

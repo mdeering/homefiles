@@ -1,7 +1,18 @@
 ###############################################################################
+# ActiveRecord
+###############################################################################
+snippet hasm
+	has_many ${1:association}
+
+###############################################################################
+# Gemfile
+###############################################################################
+snippet :source
+	source 'https://rubygems.org'
+
+###############################################################################
 # Ruby
 ###############################################################################
-
 snippet class
 	class ${1:ClassName}
 		${2}
@@ -12,6 +23,14 @@ snippet class::
 		${3}
 	end
 
+snippet do
+	do
+		${1}
+	end
+snippet do|
+	do |${1:value}|
+		${2}
+	end
 snippet def
 	def ${1:function_name}
 		${2}
@@ -71,11 +90,37 @@ snippet it
 	it '${1:should do something really cool}' do
 		${2}
 	end
+snippet itp
+	it '${1:should do something really cool pending thing}'
 snippet its
 	it { should ${1:do_some_really_cool_things} }
 	${2}
+snippet itsama
+	it { should allow_mass_assignment_of(${1:attribute}) }
+	${2}
+snippet itsamaa
+	it { should allow_mass_assignment_of(${1:attribute}).as(${2:roll}) }
+	${3}
+snippet its!ama
+	it { should_not allow_mass_assignment_of(${1:attribute}) }
+	${2}
+snippet its!amaa
+	it { should_not allow_mass_assignment_of(${1:attribute}).as(${2:roll}) }
+	${3}
 snippet itsav
 	it { should allow_value(${1:value}).for(:${2:attribute}) }
+	${3}
+snippet itsbt
+	it { should belong_to ${1:association} }
+	${3}
+snippet itsha
+	it { should have_attribute ${1:attribute}) }
+	${2}
+snippet itshm
+	it { should have_many ${1:association} }
+	${2}
+snippet itshmt
+	it { should have_many(${1:association}).through(${2:association}) }
 	${3}
 snippet itsn
 	it { should_not ${1:do_some_really_cool_things} }
@@ -86,4 +131,12 @@ snippet itsna
 snippet itsnav
 	it { should_not allow_value(${1:value}).for(:${2:attribute}) }
 	${3}
-
+snippet itsho
+	it { should have_one ${1:association} }
+	${2}
+snippet itsvlo<
+	it { should validate_length_of(${1:attribute}).with_maximum(${2:value}) }
+	${3}
+snippet itsvpo
+	it { should validate_presence_of(${1:attribute}) }
+	${2}
