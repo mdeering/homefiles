@@ -9,10 +9,21 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
+" My custom leaders
+"
+" Insert a line of whitespace below the current and remain in normal mode
+nmap <leader>o o<ESC>k
+" Insert a line of whitespace above the current and remain in normal mode
+nmap <leader>O O<ESC>j
 
 nmap <leader>p :call PasteToggle()<CR>
 nmap <leader>r :call NumberToggle()<CR>
 nmap <leader>s :set spell!<CR>
+
+" Swap the last to characters
+imap <leader>t <ESC>xPla
+nmap <leader>t xPl
+
 nmap <leader>v :edit $MYVIMRC<CR>
 
 set backspace=indent,eol,start    " Intuitive backspacing.
@@ -23,10 +34,9 @@ set expandtab                     " Use spaces instead of tabs
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 set laststatus=2                  " Show the status line all the time
+
 " Useful status information at bottom of screen
-" set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\
-" %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\
-" %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(%l,%c-%v\ %)%P
 
 set nowrap                        " Turn off line wrapping.
 set scrolloff=3                   " Show 3 lines of context around the cursor.
@@ -37,4 +47,4 @@ set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
 " Strip trailing whitespace on save for all of the listed file types.
-autocmd FileType c,cpp,java,php,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,eruby,java,php,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e

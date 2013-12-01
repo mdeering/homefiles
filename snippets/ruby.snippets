@@ -48,16 +48,16 @@ snippet defsa
 	def self.${1:function_name}(${2:args})
 		${3}
 	end
+snippet enc
+	# Encoding: utf-8
 snippet mod
 	module ${1:PowerfulModuleName}
 		${2}
 	end
-
 snippet mod::
 	module ${1:Parent}::${2:Child}
 		${3}
 	end
-
 snippet pri
 	private
 	
@@ -73,19 +73,30 @@ snippet prot
 
 snippet cont
 	context '${1:describe what is going on}' do
-		${2}
-	end
 
+		${2}
+
+	end
 snippet desc
 	describe '${1:something that needs testing}' do
-		${2}
-	end
 
+		${2}
+
+	end
 snippet desk
 	describe ${1:ClassName} do
-		${2}
-	end
 
+		${2}
+
+	end
+snippet expt
+	expect(${1:somthing}).to ${2} 
+snippet expteq
+	expect(${1:somthing}).to eq(${2:something_else})
+snippet exptn
+	expect(${1:somthing}).to_not ${2} 
+snippet exptneq
+	expect(${1:somthing}).to_not eq(${2:something_else})
 snippet it
 	it '${1:should do something really cool}' do
 		${2}
@@ -116,6 +127,12 @@ snippet itsbt
 snippet itsha
 	it { should have_attribute ${1:attribute}) }
 	${2}
+snippet itshdbi
+	it { should have_db_index ${1:column_name} }
+	${2}
+snippet itshdbia
+	it { should have_db_index([ ${1:column_names} ]) }
+	${2}
 snippet itshm
 	it { should have_many ${1:association} }
 	${2}
@@ -140,3 +157,38 @@ snippet itsvlo<
 snippet itsvpo
 	it { should validate_presence_of(${1:attribute}) }
 	${2}
+snippet newarspec
+	require 'spec_helper'
+
+	describe ${1:ClassName} do
+	
+	  describe 'Associations' do
+	  end		
+
+	  describe 'Attributes' do
+	  end		
+
+	  describe 'Data Integrity' do
+	  end		
+
+	  describe 'Database' do
+	  end		
+
+	  describe 'Factories' do
+	  end		
+
+	  describe 'Security' do
+	  end		
+	   
+	  describe 'Validations' do
+	  end		
+
+	end
+snippet newspec
+	require 'spec_helper'
+
+	describe ${1:ClassName} do
+		
+		${2}
+
+	end
