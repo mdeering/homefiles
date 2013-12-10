@@ -21,7 +21,7 @@ nmap <leader>r :call NumberToggle()<CR>
 nmap <leader>s :set spell!<CR>
 
 " Swap the last to characters
-imap <leader>t <ESC>xPla
+imap <leader>t <ESC>xpla
 nmap <leader>t xPl
 
 nmap <leader>v :edit $MYVIMRC<CR>
@@ -35,6 +35,10 @@ set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 set laststatus=2                  " Show the status line all the time
 
+" show trailing whitespace chars
+set list
+set listchars=tab:>-,trail:.,extends:#,nbsp:.
+
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(%l,%c-%v\ %)%P
 
@@ -46,5 +50,16 @@ set smartcase                     " But case-sensitive if expression contains a 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
 
+" don't use backup files
+set nobackup
+set noswapfile
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " store swap files here
+
+" Auto read when a file is changed on disk
+set autoread
+
 " Strip trailing whitespace on save for all of the listed file types.
 autocmd FileType c,cpp,eruby,java,php,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" remove trailing whitespace
+noremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
