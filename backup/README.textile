@@ -1,9 +1,0 @@
-h1. Installation
-
-p. From within the cloned _vim_ directory run the following to setup this vim confirguration for the current user.
-
-<pre>
-ln -s $PWD $HOME/.vim
-ln -s $PWD/vimrc $HOME/.vimrc
-ln -s $PWD/gvimrc $HOME/.gvimrc
-</pre>
