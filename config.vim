@@ -63,3 +63,6 @@ autocmd FileType c,cpp,eruby,java,php,ruby,sass,yaml autocmd BufWritePre <buffer
 
 " remove trailing whitespace
 noremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+au BufRead,BufNewFile Thorfile set ft=ruby
+au BufRead,BufNewFile Guardfile set ft=ruby

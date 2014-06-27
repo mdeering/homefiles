@@ -17,12 +17,14 @@ snippet class
 	class ${1:ClassName}
 		${2}
 	end
-
+snippet class<
+	class ${1:Parent} < ${2:Child}
+		${3}
+	end
 snippet class::
 	class ${1:Parent}::${2:Child}
 		${3}
 	end
-
 snippet do
 	do
 		${1}
@@ -50,6 +52,9 @@ snippet defsa
 	end
 snippet enc
 	# Encoding: utf-8
+snippet inc
+	include ${1:ModuleName}
+	${2}
 snippet mod
 	module ${1:PowerfulModuleName}
 		${2}
@@ -61,11 +66,11 @@ snippet mod::
 snippet pri
 	private
 	
-		${1:def}${2}
+	${1:def}${2}
 snippet prot
 	protected
 	
-		${1:def}${2}
+	${1:def}${2}
 
 ###############################################################################
 # RSpec

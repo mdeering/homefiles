@@ -21,6 +21,7 @@ Bundle 'gmarik/vundle'
 " ---------------
 " Plugin Bundles
 " ---------------
+" http://code.tutsplus.com/series/vim-essential-plugins--net-19224
 
 " CoffeeScript support for vim
 Bundle 'kchmck/vim-coffee-script'
