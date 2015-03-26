@@ -65,3 +65,14 @@ Bundle 'godlygeek/tabular'
 
 " An extensible & universal comment plugin that also handles embedded filetypes
 Bundle 'tComment'
+
+" TODO:
+" https://github.com/junegunn/vim-easy-align
+" https://github.com/maxbrunsfeld/vim-yankstack
+" https://github.com/vim-scripts/YankRing.vim
+" https://github.com/SirVer/ultisnips
+" https://github.com/vim-ruby/vim-ruby
+" https://github.com/tpope/vim-rails
+" https://github.com/tpope/vim-bundler
+" https://github.com/tpope/vim-rake
+" https://github.com/bronson/dotfiles/blob/master/.vimrc

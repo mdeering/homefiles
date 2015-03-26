@@ -34,6 +34,7 @@ set expandtab                     " Use spaces instead of tabs
 set number                        " Show line numbers.
 set ruler                         " Show cursor position.
 set laststatus=2                  " Show the status line all the time
+set showmatch                     " briefly jump to matching }] when typing
 
 " show trailing whitespace chars
 set list
