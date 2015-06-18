@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+# TODO: Seed this hash with the local gem servers spec
+#   http://localhost:9292/atom.xml
+gems = {}
+
+Dir.glob("#{ENV['HOME']}/.rvm/gems/**/*.gem").each do |file|
+  next if gems[File.basename(file)]
+  puts `gem inabox #{file}`
+  gems[File.basename(file)] = true
+end

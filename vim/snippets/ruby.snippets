@@ -71,6 +71,10 @@ snippet prot
 	protected
 	
 	${1:def}${2}
+snippet pry
+	require 'pry'; binding.pry;
+snippet rubygems
+	source 'https://rubygems.org'
 
 ###############################################################################
 # RSpec
@@ -157,7 +161,7 @@ snippet itsho
 	it { should have_one ${1:association} }
 	${2}
 snippet itsvlo<
-	it { should validate_length_of(${1:attribute}).with_maximum(${2:value}) }
+	it { should validate_length_of(${1:attribute}).is_at_most(${2:value}) }
 	${3}
 snippet itsvpo
 	it { should validate_presence_of(${1:attribute}) }

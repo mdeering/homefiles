@@ -1,0 +1,6 @@
+for file in ~/.bash/*
+do
+  if ! [ 'bashrc' == `basename $file` ]; then
+    source $file
+  fi
+done
