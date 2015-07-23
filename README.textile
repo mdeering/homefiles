@@ -1,0 +1,7 @@
+.h1 Common tool and environment set for Linux
+
+This is non-destructive. Any changes or updates to existing configuration files will prompt you for overrides and provide a difference of the changes if relevant.
+
+.h2 Install
+
+<pre><code class='bash'>bundle update && thor setup</code></pre>
