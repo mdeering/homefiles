@@ -1,9 +1,33 @@
 ###############################################################################
+# Ruby
+###############################################################################
+snippet (
+	(${0})
+snippet [
+	[${0}]
+snippet {
+	{ ${0} }
+###############################################################################
 # ActiveRecord
 ###############################################################################
 snippet hasm
 	has_many ${1:association}
-
+snippet hasmt
+	has_many ${1:association}, through: ${2:association}
+snippet norma
+	normalize_attribute${1:s} ${2:attribute}
+snippet normado
+	normalize_attribute${1:s} ${2:attribute} do |value|
+		${0}
+	end
+###############################################################################
+# ActiveModel
+###############################################################################
+snippet valid
+	validates ${1:attribute}
+snippet validp
+	validates ${1:attribute},
+						presence: true${0}
 ###############################################################################
 # Gemfile
 ###############################################################################
@@ -15,53 +39,54 @@ snippet :source
 ###############################################################################
 snippet class
 	class ${1:ClassName}
-		${2}
+		${0}
 	end
 snippet class<
 	class ${1:Parent} < ${2:Child}
-		${3}
+		${0}
 	end
 snippet class::
 	class ${1:Parent}::${2:Child}
-		${3}
+		${0}
 	end
 snippet do
 	do
-		${1}
+		${0}
 	end
 snippet do|
 	do |${1:value}|
-		${2}
+		${0}
 	end
 snippet def
 	def ${1:function_name}
-		${2}
+		${0}
 	end
 
 snippet defa
 	def ${1:function_name}(${2:args})
-		${3}
+		${0}
 	end
 snippet defs
 	def self.${1:function_name}
-		${2}
+		${0}
 	end
 snippet defsa
 	def self.${1:function_name}(${2:args})
-		${3}
+		${0}
 	end
 snippet enc
 	# Encoding: utf-8
 snippet inc
 	include ${1:ModuleName}
-	${2}
+snippet let
+	let(${1:name}) { ${2:memoized_object} }
 snippet mod
 	module ${1:PowerfulModuleName}
-		${2}
+		${0}
 	end
 snippet mod::
 	module ${1:Parent}::${2:Child}
-		${3}
+		${0}
 	end
 snippet pri
 	private
@@ -89,17 +114,25 @@ snippet cont
 snippet desc
 	describe '${1:something that needs testing}' do
 
+		${0}
+
+	end
+snippet descc
+	RSpec.describe ${1:SomeClass} do
+
 		${2}
 
 	end
 snippet desk
-	describe ${1:ClassName} do
+	RSpec.describe ${1:ClassName} do
 
-		${2}
+		${0}
 
 	end
 snippet expt
 	expect(${1:somthing}).to ${2} 
+snippet exptba
+	expect(${1:somthing}).to be_a(${2:ClassName})
 snippet expteq
 	expect(${1:somthing}).to eq(${2:something_else})
 snippet exptn
@@ -107,14 +140,14 @@ snippet exptn
 snippet exptneq
 	expect(${1:somthing}).to_not eq(${2:something_else})
 snippet it
-	it '${1:should do something really cool}' do
-		${2}
+	it '${1:will do something really cool}' do
+		${0}
 	end
+
 snippet itp
 	it '${1:should do something really cool pending thing}'
 snippet its
-	it { should ${1:do_some_really_cool_things} }
-	${2}
+	it { should ${1:do_some_really_cool_things} }${0}
 snippet itsama
 	it { should allow_mass_assignment_of(${1:attribute}) }
 	${2}
@@ -131,46 +164,36 @@ snippet itsav
 	it { should allow_value(${1:value}).for(:${2:attribute}) }
 	${3}
 snippet itsbt
-	it { should belong_to ${1:association} }
-	${3}
+	it { should belong_to ${1:association} }${0}
 snippet itsha
-	it { should have_attribute ${1:attribute}) }
-	${2}
+	it { should have_attribute ${1:attribute}) }${0}
 snippet itshdbi
-	it { should have_db_index ${1:column_name} }
-	${2}
+	it { should have_db_index ${1:column_name} }${0}
 snippet itshdbia
-	it { should have_db_index([ ${1:column_names} ]) }
-	${2}
+	it { should have_db_index([ ${1:column_names} ]) }${0}
 snippet itshm
-	it { should have_many ${1:association} }
-	${2}
+	it { should have_many ${1:association} }${0}
 snippet itshmt
-	it { should have_many(${1:association}).through(${2:association}) }
-	${3}
+	it { should have_many(${1:association}).through(${2:association}) }${0}
+snippet itshvf
+	it { should have_a_valid_factory ${1:factory_name} }${0}
 snippet itsn
-	it { should_not ${1:do_some_really_cool_things} }
-	${2}
+	it { should_not ${1:do_some_really_cool_things} }${0}
 snippet itsna
-	it { should normalize_attribute :${1:attribute} }
-	${2}
+	it { should normalize_attribute :${1:attribute} }${0}
 snippet itsnav
-	it { should_not allow_value(${1:value}).for(:${2:attribute}) }
-	${3}
+	it { should_not allow_value(${1:value}).for(:${2:attribute}) }${0}
 snippet itsho
-	it { should have_one ${1:association} }
-	${2}
+	it { should have_one ${1:association} }${0}
 snippet itsvlo<
-	it { should validate_length_of(${1:attribute}).is_at_most(${2:value}) }
-	${3}
+	it { should validate_length_of(${1:attribute}).is_at_most(${2:value}) }${0}
 snippet itsvpo
-	it { should validate_presence_of(${1:attribute}) }
-	${2}
-snippet newarspec
-	require 'spec_helper'
+	it { should validate_presence_of(${1:attribute}) }${0}
+snippet modelrspec
+	require '${1:rails_helper}'
 
-	describe ${1:ClassName} do
-	
+	RSpec.describe ${1:ClassName} do
+	  ${0}
 	  describe 'Associations' do
 	  end		
 
@@ -188,16 +211,16 @@ snippet newarspec
 
 	  describe 'Security' do
 	  end		
-	   
+
 	  describe 'Validations' do
 	  end		
 
 	end
-snippet newspec
-	require 'spec_helper'
+snippet rspec
+	require '${1:rails_helper}'
 
-	describe ${1:ClassName} do
-		
-		${2}
+	RSpec.describe ${2:ClassName} do
+
+		${0}
 
 	end
