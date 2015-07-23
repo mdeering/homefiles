@@ -1,0 +1,7 @@
+[color]
+  ui = true
+[user]
+  email = <%= config[:email] %>
+  name = <%= config[:name] %>
+[core]
+  excludesfile = <%= "#{ENV['HOME']}" %>/.gitignore_global
