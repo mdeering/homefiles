@@ -1,7 +1,9 @@
 [color]
   ui = true
+[commit]
+  template = ~/.gitmessage
+[core]
+  excludesfile = ~/.gitignore_global
 [user]
   email = <%= config[:email] %>
   name = <%= config[:name] %>
-[core]
-  excludesfile = <%= "#{ENV['HOME']}" %>/.gitignore_global

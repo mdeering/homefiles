@@ -62,6 +62,10 @@ set autoread
 " Strip trailing whitespace on save for all of the listed file types.
 autocmd FileType c,cpp,eruby,java,php,ruby,sass,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
+" Well formatted commit messages
+" https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
+autocmd Filetype gitcommit setlocal spell textwidth=72
+
 " remove trailing whitespace
 noremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
