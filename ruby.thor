@@ -27,5 +27,4 @@ class Ruby < Thor
     JSON.parse(response.body)['rubygems_api_key']
   end
 
-
 end

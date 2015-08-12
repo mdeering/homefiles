@@ -1,3 +1,6 @@
+# Add my ~/bin directory to the path
+PATH=$PATH:~/bin
+
 alias bashconfig='cd ~ && vim .bash'
 alias bashreload='source ~/.bashrc'
 
