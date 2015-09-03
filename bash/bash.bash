@@ -1,8 +1,16 @@
 # Add my ~/bin directory to the path
 PATH=$PATH:~/bin
 
+# Convenience aliases for working with bash configuration
 alias bashconfig='cd ~ && vim .bash'
 alias bashreload='source ~/.bashrc'
+
+# Better Bash History
+# http://blog.sanctum.geek.nz/better-bash-history/
+HISTFILESIZE=100000
+HISTSIZE=100000
+HISTCONTROL=ignoreboth
+PROMPT_COMMAND='history -a'
 
 # Reset
 Color_Off='\[\e[0m\]'       # Text Reset
