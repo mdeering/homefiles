@@ -66,6 +66,9 @@ Bundle 'godlygeek/tabular'
 " An extensible & universal comment plugin that also handles embedded filetypes
 Bundle 'tComment'
 
+" Elixir support for vim.
+Bundle 'elixir-lang/vim-elixir'
+
 " TODO:
 " https://github.com/junegunn/vim-easy-align
 " https://github.com/maxbrunsfeld/vim-yankstack
