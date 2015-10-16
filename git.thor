@@ -14,4 +14,3 @@ class Git < Thor
   end
 
 end
-
