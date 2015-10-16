@@ -1,6 +1,7 @@
 syntax enable                     " Turn on syntax highlighting.
 
-filetype on                       " Turn on filetype detection.
+filetype off                       " Turn on filetype detection.
+filetype plugin indent on
 
 set autoread                      " Automatically reload changes if detected
 
