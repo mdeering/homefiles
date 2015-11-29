@@ -1,0 +1,6 @@
+AllCops:
+  Exclude:
+    - db/schema.rb
+
+LineLength:
+  Max: 125

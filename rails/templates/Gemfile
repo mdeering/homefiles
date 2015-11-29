@@ -4,22 +4,36 @@ gem 'rails'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails'
+gem 'devise'
+gem 'flash_messages_helper' # Should add an install generator for the initializer
 gem 'haml'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'pg'
 gem 'sass-rails'
 gem 'simple_form'
+# gem 'stationary' # Needs updating for Rails 4
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'guard-inch',       require: false
+  gem 'guard-livereload', require: false
+  gem 'guard-rails',      require: false
+  gem 'guard-rspec',      require: false
+  gem 'guard-rubocop',    require: false
+  gem 'guard-yardstick',  require: false
   gem 'pry',              require: false
   gem 'spring'
 end
 
 group :test do
-  gem 'factory_girl'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'cucumber-rails',   require: false
+  gem 'database_cleaner', require: false
+  gem 'factory_girl',     require: false
+  gem 'rubocop',          require: false
+  gem 'rspec-rails',      require: false
+  gem 'shoulda-matchers', require: false
+  gem 'simplecov',        require: false
+  gem 'yardstick',        require: false
 end

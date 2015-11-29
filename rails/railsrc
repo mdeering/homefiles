@@ -1,3 +1,4 @@
 -T # Skip Test::Unit files
 -d postgresql # Use postgresql as our default database for new applications
 -m ~/.rails/application_template.rb
+--skip-spring # Causes template to hang will enable spring in the template
