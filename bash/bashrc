@@ -1,6 +1,5 @@
-for file in ~/.bash/*
+for file in ~/.bash/*.bash
 do
-  if ! [ 'bashrc' == `basename $file` ]; then
-    source $file
-  fi
+  source $file
 done
+unset file
