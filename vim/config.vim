@@ -61,7 +61,7 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp   " store swap files here
 set autoread
 
 " Strip trailing whitespace on save for all of the listed file types.
-autocmd FileType c,cpp,eruby,java,php,ruby,sass,textile,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,eruby,java,markdown,php,ruby,sass,textile,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Well formatted commit messages
 " https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message
@@ -73,3 +73,5 @@ noremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 au BufRead,BufNewFile Thorfile set ft=ruby
 au BufRead,BufNewFile *.thor set ft=ruby
 au BufRead,BufNewFile Guardfile set ft=ruby
+au BufRead,BufNewFile Vagrantfile set ft=ruby
+au BufRead,BufNewFile *.md set ft=markdown

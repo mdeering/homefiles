@@ -1,5 +1,5 @@
 # Add my ~/bin directory to the path
-PATH=$PATH:~/bin
+PATH=$PATH:~/bin:~/bin/local
 
 # Convenience aliases for working with bash configuration
 alias bashconfig='cd ~ && vim .bash'
