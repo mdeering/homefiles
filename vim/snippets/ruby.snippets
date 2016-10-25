@@ -80,6 +80,8 @@ snippet defsa
 	end
 snippet enc
 	# Encoding: utf-8
+snippet frozlit
+	# frozen_string_literal: true
 snippet inc
 	include ${1:ModuleName}
 snippet let
@@ -147,7 +149,6 @@ snippet it
 	it '${1:will do something really cool}' do
 		${0}
 	end
-
 snippet itp
 	it '${1:should do something really cool pending thing}'
 snippet its
@@ -193,6 +194,8 @@ snippet itsvlo<
 	it { should validate_length_of(${1:attribute}).is_at_most(${2:value}) }${0}
 snippet itsvpo
 	it { should validate_presence_of(${1:attribute}) }${0}
+snippet itsvuo
+	it { should validate_uniqueness_of(${1:attribute}) }${0}
 snippet modelrspec
 	require '${1:rails_helper}'
 
