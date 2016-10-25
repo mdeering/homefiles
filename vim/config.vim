@@ -21,6 +21,8 @@ nmap <leader>p :call PasteToggle()<CR>
 nmap <leader>r :call NumberToggle()<CR>
 nmap <leader>s :set spell!<CR>
 
+vnoremap <C-a> :call Incr()<CR>
+
 " Swap the last to characters
 imap <leader>t <ESC>xpla
 nmap <leader>t xPl
