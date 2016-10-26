@@ -82,6 +82,7 @@ snippet enc
 	# Encoding: utf-8
 snippet frozlit
 	# frozen_string_literal: true
+	${0}
 snippet inc
 	include ${1:ModuleName}
 snippet let
@@ -104,6 +105,9 @@ snippet prot
 	${1:def}${2}
 snippet pry
 	require 'pry'; binding.pry;
+snippet req
+	require '${1:library}'
+	${0}
 snippet rubygems
 	source 'https://rubygems.org'
 

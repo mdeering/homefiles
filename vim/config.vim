@@ -23,9 +23,12 @@ nmap <leader>s :set spell!<CR>
 
 vnoremap <C-a> :call Incr()<CR>
 
-" Swap the last to characters
-imap <leader>t <ESC>xpla
-nmap <leader>t xPl
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
 
 nmap <leader>v :edit $MYVIMRC<CR>
 
