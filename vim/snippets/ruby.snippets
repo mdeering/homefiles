@@ -41,6 +41,8 @@ snippet [
 	[${0}]
 snippet {
 	{ ${0} }
+snippet #{
+	#{${1:variable}}${0}
 snippet class
 	class ${1:ClassName}
 		${0}
@@ -153,6 +155,9 @@ snippet it
 	it '${1:will do something really cool}' do
 		${0}
 	end
+snippet it"
+	it "${1:will do something really cool}" do
+		${0}
 snippet itp
 	it '${1:should do something really cool pending thing}'
 snippet its

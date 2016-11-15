@@ -9,7 +9,6 @@ gem 'devise'
 gem 'dragonfly'
 gem 'flash_messages_helper' # Should add an install generator for the initializer
 gem 'haml'
-gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'pg'
 gem 'sass-rails'
