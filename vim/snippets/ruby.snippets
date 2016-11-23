@@ -36,11 +36,11 @@ snippet ruboe
 # Ruby
 ###############################################################################
 snippet (
-	(${0})
+	(${1})${0}
 snippet [
-	[${0}]
+	[${1}]${0}
 snippet {
-	{ ${0} }
+	{ ${1} }${0}
 snippet #{
 	#{${1:variable}}${0}
 snippet class
@@ -158,6 +158,10 @@ snippet it
 snippet it"
 	it "${1:will do something really cool}" do
 		${0}
+	end
+snippet itbl
+	it_behaves_like '${1:shared behavior}'
+	${0}
 snippet itp
 	it '${1:should do something really cool pending thing}'
 snippet its
@@ -239,4 +243,8 @@ snippet rspec
 
 		${0}
 
+	end
+snippet sef
+	shared_examples_for '${1:shared behavior}' do
+		${0}
 	end
