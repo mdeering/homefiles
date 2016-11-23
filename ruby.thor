@@ -19,8 +19,9 @@ class Ruby < Thor
   private
 
   def rubygems_api_key(email, password)
-    uri = URI.parse('http://rubygems.org/api/v1/api_key.json')
+    uri = URI.parse('https://rubygems.org/api/v1/api_key.json')
     http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
     request = Net::HTTP::Get.new(uri.request_uri)
     request.basic_auth(email, password)
     response = http.request(request)
