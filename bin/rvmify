@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo ${1:-2.2} > .ruby-version
+echo ${1:-2.3} > .ruby-version
 echo ${PWD##*/} > .ruby-gemset
 cd .
 rvm info
