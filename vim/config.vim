@@ -75,8 +75,9 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " remove trailing whitespace
 noremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
+au BufRead,BufNewFile Capfile set ft=ruby
+au BufRead,BufNewFile Guardfile set ft=ruby
 au BufRead,BufNewFile Thorfile set ft=ruby
 au BufRead,BufNewFile *.thor set ft=ruby
-au BufRead,BufNewFile Guardfile set ft=ruby
 au BufRead,BufNewFile Vagrantfile set ft=ruby
 au BufRead,BufNewFile *.md set ft=markdown

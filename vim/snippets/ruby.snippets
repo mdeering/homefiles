@@ -1,4 +1,8 @@
 ###############################################################################
+# ActionController
+snippet helpm
+	helper_method :${1:method_name}${0}
+###############################################################################
 # ActiveRecord
 ###############################################################################
 snippet hasm
@@ -72,6 +76,10 @@ snippet defa
 	def ${1:function_name}(${2:args})
 		${0}
 	end
+snippet definit
+	def ${1:initialize}(${2:**options})
+		${0}
+	end
 snippet defs
 	def self.${1:function_name}
 		${0}
@@ -97,6 +105,8 @@ snippet mod::
 	module ${1:Parent}::${2:Child}
 		${0}
 	end
+snippet nodoc
+	# :nodoc:${0}
 snippet pri
 	private
 	
@@ -203,6 +213,8 @@ snippet itsnav
 	it { should_not allow_value(${1:value}).for(:${2:attribute}) }${0}
 snippet itsho
 	it { should have_one ${1:association} }${0}
+snippet itsr
+	it { should route(:${1:get}, '${2:/some/route}').to('${3:controller}#${4:action}', ${5:params}) }${0}
 snippet itsvlo<
 	it { should validate_length_of(${1:attribute}).is_at_most(${2:value}) }${0}
 snippet itsvpo

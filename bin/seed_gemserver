@@ -1,11 +1,27 @@
 #!/usr/bin/env ruby
 
+require 'rubygems'
+
+server_location = ENV['GEM_SERVER_TO_SEED'] || 'http://localhost:9292'
+
 # TODO: Seed this hash with the local gem servers spec
-#   http://localhost:9292/atom.xml
+#   "#{server_location}/atom.xml"
 gems = {}
 
+puts 'delay debugging start'
+puts 'latest'
+puts Gem.latest_rubygems_version
+puts 'current'
+puts Gem.rubygems_version
+puts 'delay debugging end'
 Dir.glob("#{ENV['HOME']}/.rvm/gems/**/*.gem").each do |file|
-  next if gems[File.basename(file)]
-  puts `gem inabox #{file}`
+  if gems[File.basename(file)]
+    puts "#{File.basename(file)} is already present on the server."
+    next
+  end
+  puts "gem push #{file} --host #{server_location}"
+  # TODO: Need to figure out why the heck gep push takes so long.  Seems like
+  # it is checking with rubygems.org on every call or something.
+  puts `gem push #{file} --host #{server_location}`
   gems[File.basename(file)] = true
 end
