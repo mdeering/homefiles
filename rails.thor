@@ -6,8 +6,8 @@ class Rails < Thor
 
   desc 'setup', 'Setup rails environment.'
   def setup
-    create_link "#{ENV['HOME']}/.railsrc", "#{Dir.pwd}/rails/railsrc"
-    create_link "#{ENV['HOME']}/.rails",   "#{Dir.pwd}/rails"
+    create_link "#{ENV.fetch('HOME')}/.railsrc", "#{Dir.pwd}/rails/railsrc"
+    create_link "#{ENV.fetch('HOME')}/.rails",   "#{Dir.pwd}/rails"
   end
 
 end

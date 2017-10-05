@@ -8,7 +8,7 @@ class Ruby < Thor
   desc 'setup', 'Setup ruby environment.'
   def setup
     create_file '~/.gemrc', 'gem: --no-document'
-    unless File.exists?("#{ENV['HOME']}/.gem/credentials")
+    unless File.exists?("#{ENV.fetch('HOME')}/.gem/credentials")
       rubygems_email    = ask('What is your rubygems.org email?', default: ENV['EMAIL_ADDRESS'] || 'example@example.com'.gsub(/example/, ENV['USERNAME']))
       rubygems_password = ask('What is your rubygems.org password?', echo: false)
       create_file "#{ENV['HOME']}/.gem/credentials", "---\n:rubygems_api_key: #{rubygems_api_key(rubygems_email, rubygems_password)}"
