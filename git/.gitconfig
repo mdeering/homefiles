@@ -7,3 +7,5 @@
 [user]
   email = <%= config[:email] %>
   name = <%= config[:name] %>
+[push]
+  default = simple
