@@ -1,0 +1,24 @@
+snippet ",
+	", "${1:string}"
+snippet aptc
+	apt-get clean${0}
+snippet apti
+	apt-get install -y ${1:package}
+snippet aptu
+	apt-get update${0}
+snippet entry
+	ENTRYPOINT ["${1:command}"${0}]
+snippet env
+	ENV ${1:name}=${2:value}${0}
+snippet cmd
+	CMD ["${1:command}"${0}]
+snippet expose
+	EXPOSE ${1:80}
+snippet from
+	FROM ${1:ubuntu:16.04}${0}
+snippet run
+	RUN ${0}
+snippet var
+	${1:name}=${2:value}${0}
+snippet vol
+	VOLUME ${1:/dir}${0}
