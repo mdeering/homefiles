@@ -42,7 +42,11 @@ snippet ruboe
 snippet (
 	(${1})${0}
 snippet [
-	[${1}]${0}
+	[${1}]
+snippet ['
+	['${1:string}'${0}]
+snippet ',
+	', '${1:string}'
 snippet {
 	{ ${1} }${0}
 snippet #{
@@ -222,6 +226,8 @@ snippet itsvpo
 snippet itsvuo
 	it { should validate_uniqueness_of(${1:attribute}) }${0}
 snippet modelrspec
+	# frozen_string_literal: true
+
 	require '${1:rails_helper}'
 
 	RSpec.describe ${1:ClassName} do
@@ -249,6 +255,8 @@ snippet modelrspec
 
 	end
 snippet rspec
+	# frozen_string_literal: true
+
 	require '${1:rails_helper}'
 
 	RSpec.describe ${2:ClassName} do

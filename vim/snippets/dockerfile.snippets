@@ -1,5 +1,7 @@
 snippet ",
 	", "${1:string}"
+snippet add
+	ADD ${1:/source/location.sh} ${2:/destination/location.sh}
 snippet aptc
 	apt-get clean${0}
 snippet apti
@@ -16,6 +18,8 @@ snippet expose
 	EXPOSE ${1:80}
 snippet from
 	FROM ${1:ubuntu:16.04}${0}
+snippet maint
+	MAINTAINER ${1:Full Name} <${2:email@address.com}>
 snippet run
 	RUN ${0}
 snippet var
